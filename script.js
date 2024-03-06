@@ -9,7 +9,7 @@ const humidity = document.getElementById("Humidity");
 
 async function getData(query) {
  const response = await fetch(
-    `http://api.weatherapi.com/v1/current.json?key=0e67e1075b574ef29d982506240503&q=${query}&aqi=yes`
+    `https://api.weatherapi.com/v1/current.json?key=0e67e1075b574ef29d982506240503&q=${query}&aqi=yes`
   );
   const data = await response.json();
   if (data.error) {
@@ -20,7 +20,7 @@ async function getData(query) {
 
 async function fetchDataByLocation(latitude, longitude) {
   const response = await fetch(
-    `http://api.weatherapi.com/v1/current.json?key=0e67e1075b574ef29d982506240503&q=${latitude},${longitude}&aqi=yes`
+    `https://api.weatherapi.com/v1/current.json?key=0e67e1075b574ef29d982506240503&q=${latitude},${longitude}&aqi=yes`
   );
   return await response.json();
 }
