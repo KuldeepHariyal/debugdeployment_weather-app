@@ -8,9 +8,7 @@ const condition = document.getElementById("condition");
 const humidity = document.getElementById("Humidity");
 
 async function getData(query) {
-  const response = await fetch(
-    `https://api.weatherapi.com/v1/current.json?key=0e67e1075b574ef29d982506240503&q=${query}&aqi=yes`
-  );
+  const response = await fetch(`https://cors-anywhere.herokuapp.com/http://api.weatherapi.com/v1/current.json?key=YOUR_API_KEY&q=${query}&aqi=yes`);
   const data = await response.json();
   if (data.error) {
     throw new Error("Please enter a valid city name");
